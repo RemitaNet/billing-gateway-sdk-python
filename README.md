@@ -85,6 +85,8 @@ After you have debit the customer with the RRR amount (amountDue) to process the
 #### Transaction Status
 You may need to enquire that status of biller payments your customers have made via the Bill Payment Notification API. 
 
+![](images/paymentStatusPage.png)
+
 
 ---
     

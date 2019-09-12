@@ -32,11 +32,9 @@ class BillPaymentNotificatiion(object):
                            'amountDebitted': bill_notification_payload.amountDebitted,
                            'fundingSource': bill_notification_payload.fundingSource
                            }
-                print(payload)
                 try:
                     response = requests.post(url, headers=headers, json=payload,
                                              timeout=time_out["CONNECTION_TIMEOUT"])
-                    print(response.content)
                     get_notification_response = BaseResponse(response.content)
                 except ConnectTimeout:
                     return get_response.throw_exception(code=SdkResponseCode.CONNECTION_TIMEOUT_CODE,
@@ -47,7 +45,7 @@ class BillPaymentNotificatiion(object):
                 except ReadTimeout:
                     return get_response.throw_exception(code=SdkResponseCode.CONNECTION_TIMEOUT_CODE,
                                                         message=SdkResponseCode.CONNECTION_TIMEOUT)
-                except ConnectionError as e:  # This is the correct syntax
+                except ConnectionError as e:
                     return get_response.throw_exception(code=SdkResponseCode.ERROR_WHILE_CONNECTING_CODE,
                                                         message=SdkResponseCode.ERROR_WHILE_CONNECTING)
             return get_notification_response
@@ -60,7 +58,6 @@ class BillPaymentNotificatiion(object):
         hash_string = bill_payload.rrr + bill_payload.amountDebitted + bill_payload.fundingSource + \
                       bill_payload.debittedAccount + bill_payload.paymentAuthCode + secret_key
         txn_hash = EncryptionConfig.sha512(hash_string)
-        print("SHA512 " + txn_hash)
         headers = {'Content-type': 'application/json', 'publicKey': public_key,
                    'transactionId': bill_payload.transactionId, 'TXN_HASH': txn_hash}
         return headers

@@ -1,6 +1,7 @@
 from Credentials import Credentials
 from GetListOfBillers.GetBillerPayload import GetBillerPayload
 from GetListOfServices.GetServicePayload import GetServicePayload
+from GetPaymentStatus.PaymentStatusPayload import PaymentStatusPayload
 from GetRRRDetails.GetRrrDetailPayload import GetRrrDetailPayload
 from PaymentNotification.BillerNotificationPayload import BillerNotificationPayload
 from RemitaBillingGateway import RemitaBillingGateway
@@ -17,6 +18,14 @@ class TestBilling:
     credentials = Credentials(public_key=public_key, secret_key=secret_key, environment=environment,
                               read_timeout=read_timeout, connection_timeout=connection_timeout)
 
+# getPaymentstatus
+#     transaction_id = "1567417796927"
+#     payment_status_payload = PaymentStatusPayload(transaction_id=transaction_id)
+#     payment_status = RemitaBillingGateway(credentials=credentials)
+#     payment_status_response = payment_status.payment_status(payment_status_payload)
+    # print(payment_status_response.responseCode)
+    # print(payment_status_response.responseData)
+    # print(payment_status_response.responseMsg)
 
 
 
@@ -30,15 +39,6 @@ class TestBilling:
     # print(rrr_detail_response.responseCode)
     # print(rrr_detail_response.responseData)
     # print(rrr_detail_response.responseMsg)
-
-# # getPaymentstatus
-    # transaction_id = "1567417796927"
-    # payment_status_payload = PaymentStatusPayload(transaction_id=transaction_id)
-    # payment_status = RemitaBillingGateway(credentials=credentials)
-    # payment_status_response = payment_status.payment_status(payment_status_payload)
-    # print(payment_status_response.responseCode)
-    # print(payment_status_response.responseData)
-    # print(payment_status_response.responseMsg)
 
 # #getValidateRequest
 
@@ -135,7 +135,7 @@ class TestBilling:
     # print(gen_rrr_response.responseMsg)
 
 # #  BillNotification
-    transactionId = "6528765897576232"
+    transactionId = "65287658975762322"
     amountDebitted = "200000"
     branchCode = "Empty"
     debittedAccount = "2044863290"

@@ -32,7 +32,7 @@ class PaymentStatus(object):
                 except ReadTimeout:
                     return get_response.throw_exception(code=SdkResponseCode.CONNECTION_TIMEOUT_CODE,
                                                         message=SdkResponseCode.CONNECTION_TIMEOUT)
-                except ConnectionError as e:  # This is the correct syntax
+                except ConnectionError as e:
                     return get_response.throw_exception(code=SdkResponseCode.ERROR_WHILE_CONNECTING_CODE,
                                                         message=SdkResponseCode.ERROR_WHILE_CONNECTING)
                 return rrr_detail_response

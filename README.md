@@ -1,4 +1,4 @@
-# REMITA BILLER SDK PYTHON
+# REMITA BILLER PYTHON SDK
 Python SDK for Remita Billing Gateway Service simple APIs
 
 ## Package 

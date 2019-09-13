@@ -10,7 +10,7 @@ pip install remita-billing-gateway
 ## Requirements
 *  Python 3.4 or later
 
-##Dependency
+## Dependency
 *  requests 2.22.0 or later
 
 ## Overview
@@ -27,9 +27,9 @@ Properties such as public_key, secret_key, and environment are mandatory while r
 
 |Field       | Type    | Required   | Description   |   
 | ---        | ------  | -----------| -------- |   
-| public_key  | String  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
-| secret_key  | String  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
-|environment| String  | Yes        | SetEnvironment.DEMO for Demo environment, While SetEnvironment.LIVE for Production environment.
+| public_key  | str  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
+| secret_key  | str  | Yes        | Located at the Billing page of your Remita profile on www.remita.net.
+|environment| str  | Yes        | SetEnvironment.DEMO for Demo environment, While SetEnvironment.LIVE for Production environment.
 | read_timeout | int | Yes| The timeout on waiting to read data.
 | connection_timeout | int | Yes| The timeout in making the initial connection.
 
@@ -193,9 +193,9 @@ You need to make a request for Remita to execute a validation operation on the d
 ### validate_request_response attributes
 | Name  | Type    | 
 | ---   | ------  | 
-| responseCode | String |
-| responseMsg | String |  
-| appVersionCode | String | 
+| responseCode | str |
+| responseMsg | str |  
+| appVersionCode | str | 
 | responseData  | List[ResponseDatum] |
 
 
@@ -231,9 +231,9 @@ In order to complete the transaction through the Remita Payment Gateway, a Remit
 ### gen_rrr_response attributes
 | Name  | Type    | 
 | ---   | ------  | 
-| responseCode | String |
-| responseMsg | String |  
-| appVersionCode | String | 
+| responseCode | str |
+| responseMsg | str |  
+| appVersionCode | str | 
 | responseData  | List[ResponseDatum] |
 
 
@@ -267,12 +267,12 @@ After you have debit the customer with the RRR amount (amountDue) to process the
 ### notification attributes
 | Name  | Type    | 
 | ---   | ------  | 
-| responseCode | String |
-| responseMsg | String |  
-| appVersionCode | String | 
-| iResponseCode | String | 
-| iResponseMessage | String | 
-| responseData  | notification |
+| responseCode | str |
+| responseMsg | str |  
+| appVersionCode | str | 
+| iResponseCode | str | 
+| iResponseMessage | str | 
+| responseData  |  List[ResponseDatum]  |
 
 
 #### Transaction Status
@@ -295,12 +295,12 @@ You may need to enquire that status of biller payments your customers have made 
 ### payment_status_response attributes
 | Name  | Type    | 
 | ---   | ------  | 
-| responseCode | String |
-| responseMsg | String |  
-| appVersionCode | String | 
-| iResponseCode | String | 
-| iResponseMessage | String | 
-| responseData  | List<GetTransactionStatusData> |
+| responseCode | str |
+| responseMsg | str |  
+| appVersionCode | str | 
+| iResponseCode | str | 
+| iResponseMessage | str | 
+| responseData  |  List[ResponseDatum]  |
 
 ---
     

@@ -2,8 +2,8 @@ import requests
 from requests import ConnectTimeout, ReadTimeout
 
 from Responses.BaseResponse import BaseResponse
-from EncryptionConfig import EncryptionConfig
-from EnvironmentConfig import EnvironmentConfig
+from RemitaBillingService.EncryptionConfig import EncryptionConfig
+from RemitaBillingService.EnvironmentConfig import EnvironmentConfig
 from Responses.SdkResponseCode import SdkResponseCode
 
 

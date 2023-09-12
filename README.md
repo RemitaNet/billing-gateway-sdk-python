@@ -1,27 +1,35 @@
 # REMITA BILLER PYTHON SDK
-Python SDK for Remita Billing Gateway Service simple APIs
+---
+- [Overview](#Overview)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
 
-## Package 
+---
+## Overview
+**Python SDK for Remita Billing Gateway Service simple APIs** 
+
+Integrating to Remita for Biller payments SDK enables your customers make payments to billers on Remita through your platform. This provides you with the capability to offer your customers access to the vast array of billers and merchants, including schools, churches, service providers and the Federal Government ministries, departments and agencies (MDAs) available on Remita to purchase and subscribe to their various products and services.
+
+The process involves your customers selecting a biller to pay via your platform. They will supply payment details and confirm the details so you can debit their account with AmountDue to credit a designated Funds Holding Account. Your customers will be emailed Remita receipts (which are FGN MDA-recognized for TSA-bound payments) for each transaction.
+
+## Installation
+### Package 
 To install the `remita-billing-gateway` package, run the following command.
 
 ```
 pip install remita-billing-gateway
 ```
-## Requirements
+### Requirements
 *  Python 3.4 or later
 
-## Dependency
+### Dependency
 *  requests 2.22.0 or later
 
-## Overview
-Integrating to Remita for Biller payments SDK enables your customers make payments to billers on Remita through your platform. This provides you with the capability to offer your customers access to the vast array of billers and merchants, including schools, churches, service providers and the Federal Government ministries, departments and agencies (MDAs) available on Remita to purchase and subscribe to their various products and services.
-
-The process involves your customers selecting a biller to pay via your platform. They will supply payment details and confirm the details so you can debit their account with AmountDue to credit a designated Funds Holding Account. Your customers will be emailed Remita receipts (which are FGN MDA-recognized for TSA-bound payments) for each transaction.
-
-## Prerequisites
+### Prerequisites
 Prior to using the SDK, you need to set up an integration profile on [Remita](https://login.remita.net) if you are not already registered as a merchant/biller on the platform. Each method call will require you to pass the Public key/Secret key. Your public and secret keys are located at the Billing page on your profile. After you login, click ‘Setup Billing’ at your dashboard >> click ‘Proceed’ on the ‘Yes’ option for the integration question that comes up >> to display the Public/Secret key.
 
-## Configuration
+### Configuration
 All biller credentials needed to use the SDK are being setup by instantiating the Credential Class and set properties in this class accordingly.
 Properties such as public_key, secret_key, and environment are mandatory while read_timeout and connection_timeout can be set to zero (0).
 
@@ -47,8 +55,8 @@ Properties such as public_key, secret_key, and environment are mandatory while r
 	remita_biling_gateway = RemitaBillingGateway(credentials);
 ```
 
-
-## Methods
+## Usage
+### Methods
 #### Get Bller(s)
 This returns a list of the billers, merchants and MDAs available on Remita.
 
@@ -304,9 +312,17 @@ You may need to enquire that status of biller payments your customers have made 
 
 ---
     
-## Useful links
-* Join our Slack Developer/Support channel at http://bit.ly/RemitaDevSlack
+## Contributing
+- To contribute to this repo, follow these guidelines for creating issues, proposing new features, and submitting pull requests:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b "feature-name"`
+3. Make your changes and commit: `git commit -m "added some new features"`
+4. Push your changes: `git push origin feature-name`
+5. Submit a Pull Request (PR).
+
+### Useful links
+* Join our [Slack](http://bit.ly/RemitaDevSlack) community and support channel 
     
-## Support
+### Support
 - For all other support needs, support@remita.net
-- To contribute to this repo, create an issue on what you intend to fix or update, make a PR and team will look into it and merge.
